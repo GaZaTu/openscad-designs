@@ -1,4 +1,5 @@
 {
+  "makefile.configureOnOpen": false,
   "files.exclude": {
     ".git": true,
     "BOSL2": true
