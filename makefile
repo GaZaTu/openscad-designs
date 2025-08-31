@@ -9,13 +9,17 @@ SRC := $(ROOT_DIR)/src
 OUT := $(ROOT_DIR)/out
 
 SOURCES := $(wildcard $(SRC)/*.$(SRC_TYPE))
-OBJECTS := $(patsubst $(SRC)/%.$(SRC_TYPE), %.$(OUT_TYPE), $(SOURCES))
+OBJECTS := $(patsubst $(SRC)/%.$(SRC_TYPE), $(OUT)/%.$(OUT_TYPE), $(SOURCES))
 
 all: $(OBJECTS)
 
 clean:
 	rm -rf $(OUT)
 
-$(OBJECTS): %.$(OUT_TYPE): $(SRC)/%.$(SRC_TYPE)
-	mkdir -p $(OUT)
-	$(OPENSCAD) -o $(OUT)/$@ $^
+$(OUT)/%.$(OUT_TYPE): $(SRC)/%.$(SRC_TYPE) | $(OUT)
+	$(OPENSCAD) -o $@ $^
+
+$(OUT):
+	mkdir $(OUT)
+
+.PHONY: clean

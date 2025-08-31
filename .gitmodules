@@ -1,3 +1,6 @@
 [submodule "BOSL2"]
 	path = BOSL2
 	url = https://github.com/BelfrySCAD/BOSL2
+[submodule "NopSCADlib"]
+	path = NopSCADlib
+	url = https://github.com/nophead/NopSCADlib

@@ -2,6 +2,7 @@
   "makefile.configureOnOpen": false,
   "files.exclude": {
     ".git": true,
-    "BOSL2": true
+    "BOSL2": true,
+    "NopSCADlib": true
   }
 }
