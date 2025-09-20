@@ -1,9 +1,9 @@
 ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-OPENSCAD := openscad
+OPENSCAD := openscad --enable=lazy-union
 
 SRC_TYPE := scad
-OUT_TYPE := stl
+OUT_TYPE := 3mf
 
 SRC := $(ROOT_DIR)/src
 OUT := $(ROOT_DIR)/out

@@ -257,3 +257,24 @@ diff()
       move([28, 14, 3])
         xrot(0) zrot(90)
         lilygo_t3s3();
+
+// // cube([20, 20, 1])
+// difference() {
+//   // attach(TOP, TOP, align=CENTER)
+//   color("red")
+//   text("M", size=10, halign="center", valign="center");
+
+//   // attach(TOP, TOP, align=CENTER)
+//   text("M", size=8, halign="center", valign="center");
+// }
+
+// cube([20, 20, 20]) {
+//   attach(TOP, TOP, align=CENTER)
+//     move([0, 10, -10])
+//     sphere(r=10);
+//   attach(RIGHT, BOTTOM, align=CENTER)
+//     color("red")
+//     linear_extrude(2)
+//     move([0, 0, 0])
+//     text("M");
+// }
