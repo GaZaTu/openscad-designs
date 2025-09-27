@@ -1,3 +1,26 @@
+## Help
+
 https://openscad.org/cheatsheet/
 https://github.com/BelfrySCAD/BOSL2/wiki/CheatSheet
 https://github.com/nophead/NopSCADlib/blob/master/readme.md
+
+## Filaments
+
+- PETG Translucent
+  - Clear (32101) #fbfbfb
+- TPU 95A HF
+  - Gray (51101) #898d8d
+- PLA-CF
+  - Lava-Gray (14101) #4d5054
+- PLA Aero
+  - Gray (14104) #cdceca
+- PLA Basic
+  - Bamboo-Green (10501) #16c344
+  - Hot-Pink (10204) #f5547d
+  - Black (10101) #000000
+  - Cyan (10603) #0086d6
+- PLA Matte
+  - Ivory-White (11100) #ffffff
+  - Mandarine-Orange (11300) #f99963
+  - Ash-Gray (11102) #9b9ea0
+  - Scarlet-Red (11200) #de4343

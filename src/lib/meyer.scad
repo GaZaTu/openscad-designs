@@ -1,38 +1,43 @@
 include <../../BOSL2/std.scad>
-include <../../BOSL2/walls.scad>
 
 use <avita.outline-black.otf> // "Avita Outline:style=Outline Black"
 use <aileron.black.otf> // "Aileron:style=Black"
 
+module sparse_wall_inverted(h=50, l=100, thick=4, maxang=30, strut=5, max_bridge=20, anchor=CENTER, spin=0, orient=UP)
+  tag_scope("sparse_wall_inverted")
+  diff()
+  cube([thick, l, h])
+    tag("remove")
+    attach(FWD, FWD, align=CENTER, inside=true)
+    sparse_wall(h, l, thick, maxang, strut, max_bridge, anchor, spin, orient);
+
 $fn = 32;
 
 module meyer_logo()
-  scale([2, 2, 2])
-  cuboid([40, 40, 1.5], chamfer=0.75, edges=[BOT]) {
-    attach(TOP, TOP, align=LEFT)
+  cuboid([50, 52, 2], chamfer=1.8, edges=[BOT]) {
+    attach(TOP, BOT, align=LEFT)
       color("white")
-      resize([35.2, 0, 0])
-      move([13.5, 6, 0])
-      zrot(180)
-      linear_extrude(1)
-      text("M", 25, "Avita Outline:style=Outline Black");
-    attach(TOP, TOP, align=LEFT)
+      resize([47.5, 0, 0])
+      move([-17.2, -26, 0])
+      linear_extrude(1.4)
+      text("M", 34, "Avita Outline:style=Outline Black");
+    attach(TOP, BOT, align=LEFT)
       color("white")
-      move([6.3, -12, 0])
-      zrot(180)
-      linear_extrude(1)
-      text("meyer", 9.1, "Aileron:style=Black", spacing=0.9);
+      resize([47.5, 0, 0])
+      move([-6, -27, 0])
+      linear_extrude(1.4)
+      text("meyer", 12.4, "Aileron:style=Black", spacing=0.9);
   }
 
 module meyer_logo_face(cube_face)
-  attach(cube_face, BACK, align=CENTER, shiftout=-1.5)
-  move([0, 47, 0])
+  attach(cube_face, BACK, align=CENTER, shiftout=-1)
+  move([0, 28, 0])
   xrot(90)
   meyer_logo();
 
 module meyer_cube(partial)
   diff()
-  cuboid([120, 120, 140], chamfer=16, edges=[BOT, LEFT+FRONT, RIGHT+FRONT, LEFT+BACK, RIGHT+BACK]) {
+  cuboid([64, 64, 80], chamfer=6, edges=[BOT, LEFT+FRONT, RIGHT+FRONT, LEFT+BACK, RIGHT+BACK]) {
     tag(partial ? "remove" : "")
     meyer_logo_face(LEFT);
     tag(partial ? "remove" : "")
@@ -43,6 +48,6 @@ module meyer_cube(partial)
     meyer_logo_face(BACK);
 
     tag("remove")
-    attach(TOP, TOP, align=CENTER, inside=true, shiftout=32)
-    cuboid([108, 108, 120], chamfer=12);
+    attach(TOP, TOP, align=CENTER, inside=true, shiftout=24)
+    cuboid([56, 56, 100], chamfer=4);
   }
